@@ -64,7 +64,6 @@ public class Tictactoe {
         if (x == (2 - y))
             currentPlayerWins = currentPlayerWins || ((state[x][y] == state[(x + 1) % 3][(y + 2) % 3]) && (state[x][y] == state[(x + 2) % 3][(y + 1) % 3]));
 
-
         if(currentPlayerWins) {
             for (TictactoeController c : controllers)
             { if (c == currentPlayer)
