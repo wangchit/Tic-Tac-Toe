@@ -55,7 +55,6 @@ public class RmTrainingAI implements TictactoeController {
                 if(state[x][y] == EMPTY)
                     possibleActions.add(new int[]{x, y});
 
-        //Todo: Are all elements possible like that?
         int[] decision = possibleActions.get((int)(possibleActions.size() * random.nextDouble()));
 
         String actionString = actionToString(decision);
