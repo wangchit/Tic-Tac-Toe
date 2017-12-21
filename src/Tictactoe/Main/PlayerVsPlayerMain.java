@@ -1,11 +1,12 @@
-package Tictactoe;
+package Tictactoe.Main;
 
 import Tictactoe.Controllers.ChristinesAI;
 import Tictactoe.Controllers.CmdPlayer;
+import Tictactoe.Tictactoe;
 
 import java.util.Scanner;
 
-public class Main {
+public class PlayerVsPlayerMain {
 
     public static void main(String[] args) {
         System.out.println("Tictactoe starting...");

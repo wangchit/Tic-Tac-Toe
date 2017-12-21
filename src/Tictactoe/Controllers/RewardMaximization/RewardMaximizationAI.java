@@ -1,14 +1,14 @@
-package Tictactoe.Controllers.PayoffMaximization;
+package Tictactoe.Controllers.RewardMaximization;
 
 import Tictactoe.Controllers.TictactoeController;
 import Tictactoe.Tictactoe;
-import static Tictactoe.Controllers.PayoffMaximization.TrainingAI.*;
+import static Tictactoe.Controllers.RewardMaximization.RmTrainingAI.*;
 
-public class TrainedAI implements TictactoeController {
+public class RewardMaximizationAI implements TictactoeController {
 
     private CompleteGameExperiences experiences;
 
-    public TrainedAI(CompleteGameExperiences experiences) {
+    public RewardMaximizationAI(CompleteGameExperiences experiences) {
         this.experiences = experiences;
     }
 
@@ -20,6 +20,6 @@ public class TrainedAI implements TictactoeController {
 
     @Override
     public void onGameOver(Tictactoe.GameResult result) {
-        System.out.println("Trained AI " + result.name());
+        System.out.println("Reward maximization AI " + result.name());
     }
 }
