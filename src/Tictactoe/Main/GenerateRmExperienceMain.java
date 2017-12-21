@@ -1,11 +1,13 @@
-package Tictactoe.Controllers.RewardMaximization;
+package Tictactoe.Main;
 
+import Tictactoe.Controllers.RewardMaximization.CompleteGameExperiences;
+import Tictactoe.Controllers.RewardMaximization.RmTrainingAI;
 import Tictactoe.Tictactoe;
 
 import java.io.IOException;
 import java.util.Random;
 
-public class TrainRmMain {
+public class GenerateRmExperienceMain {
     public static void main(String... args) throws IOException {
         Random random = new Random();
         CompleteGameExperiences exp = new CompleteGameExperiences();
