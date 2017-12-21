@@ -9,7 +9,7 @@ public class Tictactoe {
     }
 
     public enum GameResult{
-        Won, Lost
+        Won, Lost, Draw
     }
 
     private int state[][] = new int[3][3];
@@ -70,10 +70,14 @@ public class Tictactoe {
                     c.onGameOver(GameResult.Lost);
 
             return GameState.Finished;
+        } else if (turn == 9) {
+            for (TictactoeController c : controllers)
+                c.onGameOver(GameResult.Draw);
+
+            return GameState.Finished;
         }
 
         turn++;
-
         return GameState.Running;
     }
 
