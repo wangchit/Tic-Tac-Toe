@@ -1,5 +1,6 @@
 package Tictactoe;
 
+import Tictactoe.Controllers.ChristinesAI;
 import Tictactoe.Controllers.CmdPlayer;
 
 import java.util.Scanner;
@@ -12,7 +13,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
 	    Tictactoe tictactoe = new Tictactoe(
-	            new CmdPlayer("O", "X", scanner),
+	            new ChristinesAI(),
                 new CmdPlayer("X", "O", scanner)
         );
 

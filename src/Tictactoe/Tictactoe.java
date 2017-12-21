@@ -59,7 +59,7 @@ public class Tictactoe {
                 ((state[x][y] == state[x][(y + 1) % 3]) && (state[x][y] == state[x][(y + 2) % 3])) ;
 
         if (x == y)
-            currentPlayerWins = currentPlayerWins || ((state[x][y] == state[(x + 1) % 3][(x + 1) % 3]) && (state[x][y] == state[(x + 2) % 3][(y + 2) % 3]));
+            currentPlayerWins = currentPlayerWins || ((state[x][y] == state[(x + 1) % 3][(y + 1) % 3]) && (state[x][y] == state[(x + 2) % 3][(y + 2) % 3]));
 
         if (x == (2 - y))
             currentPlayerWins = currentPlayerWins || ((state[x][y] == state[(x + 1) % 3][(y + 2) % 3]) && (state[x][y] == state[(x + 2) % 3][(y + 1) % 3]));
