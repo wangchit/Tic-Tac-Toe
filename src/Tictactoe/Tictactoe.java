@@ -20,6 +20,8 @@ public class Tictactoe {
     public static final int ME = 1;
     public static final int OPPONENT = 2;
 
+    private TictactoeController winner;
+
     public Tictactoe(TictactoeController playerOne, TictactoeController playerTwo){
         for(int x = 0; x < state.length; x++)
             for(int y = 0; y < state[x].length; y++)
@@ -65,11 +67,14 @@ public class Tictactoe {
             currentPlayerWins = currentPlayerWins || ((state[x][y] == state[(x + 1) % 3][(y + 2) % 3]) && (state[x][y] == state[(x + 2) % 3][(y + 1) % 3]));
 
         if(currentPlayerWins) {
-            for (TictactoeController c : controllers)
-            { if (c == currentPlayer)
+            for (TictactoeController c : controllers) {
+                if (c == currentPlayer)
                     c.onGameOver(GameResult.Won);
                 else
-                    c.onGameOver(GameResult.Lost);}
+                    c.onGameOver(GameResult.Lost);
+            }
+
+            winner = currentPlayer;
 
             return GameState.Finished;
         }
@@ -85,4 +90,7 @@ public class Tictactoe {
         return GameState.Running;
     }
 
+    public TictactoeController getWinner() {
+        return winner;
+    }
 }

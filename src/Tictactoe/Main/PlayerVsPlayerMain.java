@@ -14,7 +14,7 @@ public class PlayerVsPlayerMain {
         Scanner scanner = new Scanner(System.in);
 
 	    Tictactoe tictactoe = new Tictactoe(
-	            new ChristinesAI(),
+	            new CmdPlayer("O", "X", scanner),
                 new CmdPlayer("X", "O", scanner)
         );
 
