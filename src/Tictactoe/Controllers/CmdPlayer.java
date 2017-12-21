@@ -53,6 +53,6 @@ public class CmdPlayer implements TictactoeController{
 
     @Override
     public void onGameOver(Tictactoe.GameResult result) {
-        System.out.println("Player " + mySign + " " + (result == Tictactoe.GameResult.Won ? "won" : "lost"));
+        System.out.println("Player " + mySign + " " + (result == Tictactoe.GameResult.Won ? "won" : result == Tictactoe.GameResult.Draw ? "Draw":"lost"));
     }
 }

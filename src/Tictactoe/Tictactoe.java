@@ -56,21 +56,26 @@ public class Tictactoe {
 
         boolean currentPlayerWins =
                 ((state[x][y] == state[(x + 1) % 3][y]) && (state[x][y] == state[(x + 2) % 3][y])) ||
-                ((state[x][y] == state[x][(y + 1) % 3]) && (state[x][y] == state[x][(y + 2) % 3])) ||
-                ((state[x][y] == state[(x + 1) % 3][(y + 1) % 3]) && (state[x][y] == state[(x + 2) % 3][(y + 2) % 3]));
+                ((state[x][y] == state[x][(y + 1) % 3]) && (state[x][y] == state[x][(y + 2) % 3])) ;
 
-        if (x == 1 & y == 1)
+        if (x == y)
+            currentPlayerWins = currentPlayerWins || ((state[x][y] == state[(x + 1) % 3][(x + 1) % 3]) && (state[x][y] == state[(x + 2) % 3][(y + 2) % 3]));
+
+        if (x == (2 - y))
             currentPlayerWins = currentPlayerWins || ((state[x][y] == state[(x + 1) % 3][(y + 2) % 3]) && (state[x][y] == state[(x + 2) % 3][(y + 1) % 3]));
+
 
         if(currentPlayerWins) {
             for (TictactoeController c : controllers)
-                if (c == currentPlayer)
+            { if (c == currentPlayer)
                     c.onGameOver(GameResult.Won);
                 else
-                    c.onGameOver(GameResult.Lost);
+                    c.onGameOver(GameResult.Lost);}
 
             return GameState.Finished;
-        } else if (turn == 9) {
+        }
+
+        if ((turn == 8)&&(currentPlayerWins==false)) {
             for (TictactoeController c : controllers)
                 c.onGameOver(GameResult.Draw);
 
