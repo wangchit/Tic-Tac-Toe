@@ -1,4 +1,4 @@
-package Tictactoe.Controllers.PayoffMaximization;
+package Tictactoe.Controllers.RewardMaximization;
 
 import java.util.HashMap;
 import java.util.Map;

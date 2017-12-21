@@ -1,4 +1,4 @@
-package Tictactoe.Controllers.PayoffMaximization;
+package Tictactoe.Controllers.RewardMaximization;
 
 import Tictactoe.Controllers.TictactoeController;
 import Tictactoe.Tictactoe;
@@ -10,13 +10,13 @@ import java.util.Random;
 
 import static Tictactoe.Tictactoe.EMPTY;
 
-public class TrainingAI implements TictactoeController {
+public class RmTrainingAI implements TictactoeController {
 
     private IncompleteGameExperience incompleteGameExperience = new IncompleteGameExperience();
     private CompleteGameExperiences experiences;
     private Random random;
 
-    public TrainingAI(CompleteGameExperiences experiences, Random random){
+    public RmTrainingAI(CompleteGameExperiences experiences, Random random){
         this.experiences = experiences;
         this.random = random;
     }
@@ -41,7 +41,7 @@ public class TrainingAI implements TictactoeController {
     }
 
     static int[] stringToAction(String actionString){
-        int[] output = Arrays.stream(actionString.split("|")).mapToInt(e -> Integer.parseInt(e)).toArray();
+        int[] output = Arrays.stream(actionString.split("\\|")).mapToInt(e -> Integer.parseInt(e)).toArray();
         if(output.length != 2)
             throw new RuntimeException("Array length should be 2, is " + output.length);
         return output;
@@ -68,6 +68,6 @@ public class TrainingAI implements TictactoeController {
 
     @Override
     public void onGameOver(Tictactoe.GameResult result) {
-        experiences.addCompletedExperience(incompleteGameExperience, result == Tictactoe.GameResult.Won);
+        experiences.addCompletedExperience(incompleteGameExperience, result != Tictactoe.GameResult.Lost);
     }
 }

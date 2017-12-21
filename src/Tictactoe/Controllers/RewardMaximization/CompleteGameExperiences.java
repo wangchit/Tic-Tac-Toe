@@ -1,9 +1,9 @@
-package Tictactoe.Controllers.PayoffMaximization;
+package Tictactoe.Controllers.RewardMaximization;
 
 import java.io.*;
 import java.util.*;
 
-class RewardStatistics{
+class RewardStatistics implements Serializable{
     public int tried = 0, won = 0;
     public double getWinningRate(){
         return (double) won / (double) tried;
@@ -71,5 +71,9 @@ public class CompleteGameExperiences {
         }
 
         return bestAction;
+    }
+
+    public int getStatesCount(){
+        return totalExperience.size();
     }
 }
