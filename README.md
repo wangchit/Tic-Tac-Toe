@@ -1,4 +1,4 @@
-# Tic-Tac-Toe
+# Tic Tac Toe + AI competition
 This is an implementation of the game tic tac toe and two AIs. The project was intended as an exercise in object oriented architecture and the developement of artificial intelligence.
 
 ## Running it
@@ -23,4 +23,4 @@ This AI is implemented by Moritz and is some kind of machine learning algorithm.
 Running the ChristineVsRmMain will make the two AIs play 100 games against each other and print the statistics. Currently it seems like the RewardMaximization AI seems to play perfect, as it is only winning or getting into draws but never looses
 
 ## Implement your own AI
-To implement your own AI just create a class in the Controllers folder implementing the TictactoeController interface and let it fight against the other AIs. Feel free to submit your results here
+To implement your own AI just create a class in the Controllers folder implementing the TictactoeController interface and let it fight against the other AIs. Feel free to submit your results here.
